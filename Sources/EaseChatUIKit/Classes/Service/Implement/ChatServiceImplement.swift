@@ -120,16 +120,15 @@ extension ChatServiceImplement: ChatService {
                 if error == nil,let messages = messages {
                     for message in messages {
                         if let dic = message.ext?["ease_chat_uikit_user_info"] as? Dictionary<String,Any> {
-                            let user = ChatUserProfile()
-                            user.setValuesForKeys(dic)
-                            if user.id.isEmpty {
-                                user.id = message.from
-                            }
-                            user.modifyTime = message.timestamp
-                            ChatUIKitContext.shared?.chatCache?[message.from] = user
-                            if let cacheUser = ChatUIKitContext.shared?.userCache?[message.from] as? ChatUserProfile,cacheUser.modifyTime < message.timestamp {
-                                cacheUser.modifyTime = message.timestamp
-                                ChatUIKitContext.shared?.chatCache?[message.from] = cacheUser
+                            let user = ChatUIKitContext.shared?.userCache?[message.from] as? ChatUserProfile
+                            if user?.modifyTime ?? 0 < message.timestamp {
+                                let user = ChatUserProfile()
+                                user.setValuesForKeys(dic)
+                                if user.id.isEmpty {
+                                    user.id = message.from
+                                }
+                                user.modifyTime = message.timestamp
+                                ChatUIKitContext.shared?.chatCache?[message.from] = user
                             }
                         }
                         if let dic = message.ext?["ease_chat_uikit_text_url_preview"] as? Dictionary<String,String>,let url = dic["url"] {
@@ -156,16 +155,15 @@ extension ChatServiceImplement: ChatService {
                 if error == nil,let messages = result?.list {
                     for message in messages {
                         if let dic = message.ext?["ease_chat_uikit_user_info"] as? Dictionary<String,Any> {
-                            let user = ChatUserProfile()
-                            user.setValuesForKeys(dic)
-                            if user.id.isEmpty {
-                                user.id = message.from
-                            }
-                            user.modifyTime = message.timestamp
-                            ChatUIKitContext.shared?.chatCache?[message.from] = user
-                            if let cacheUser = ChatUIKitContext.shared?.userCache?[message.from] as? ChatUserProfile,cacheUser.modifyTime < message.timestamp {
-                                cacheUser.modifyTime = message.timestamp
-                                ChatUIKitContext.shared?.chatCache?[message.from] = cacheUser
+                            let user = ChatUIKitContext.shared?.userCache?[message.from] as? ChatUserProfile
+                            if user?.modifyTime ?? 0 < message.timestamp {
+                                let user = ChatUserProfile()
+                                user.setValuesForKeys(dic)
+                                if user.id.isEmpty {
+                                    user.id = message.from
+                                }
+                                user.modifyTime = message.timestamp
+                                ChatUIKitContext.shared?.chatCache?[message.from] = user
                             }
                         }
                     }
