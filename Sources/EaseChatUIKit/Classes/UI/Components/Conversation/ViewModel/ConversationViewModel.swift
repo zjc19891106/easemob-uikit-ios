@@ -155,8 +155,8 @@ extension ConversationViewModel: ConversationListActionEventsDelegate {
         for id in ids {
             if let conversation = ChatClient.shared().chatManager?.getConversationWithConvId(id) {
                 // SDK 会话昵称、头像都齐时，不再向接入方 provider 要资料
-                let sdkName = conversation.conversationName ?? ""
-                let sdkAvatar = conversation.conversationAvatar ?? ""
+                let sdkName = conversation.conversationName() ?? ""
+                let sdkAvatar = conversation.conversationAvatar() ?? ""
                 if !sdkName.isEmpty, !sdkAvatar.isEmpty {
                     continue
                 }
