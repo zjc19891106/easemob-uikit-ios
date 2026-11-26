@@ -1,15 +1,6 @@
 {
-  "originHash" : "92cf4c28f1e3cc90e99697d0badf92be8bdc7efbddc2fff85fb22954f7a6bbf1",
+  "originHash" : "697cc83f4195b645243007a2bff7f6ed704b34e0d7caf3fdf18ce3aedf17a46c",
   "pins" : [
-    {
-      "identity" : "easemob-uikit-ios",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/easemob/easemob-uikit-ios.git",
-      "state" : {
-        "revision" : "6c195a050ee31791d35d704ecfdd2ee52a51708a",
-        "version" : "4.26.0"
-      }
-    },
     {
       "identity" : "flanimatedimage",
       "kind" : "remoteSourceControl",
@@ -24,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/easemob/HyphenateChat_iOS.git",
       "state" : {
-        "revision" : "7f09189cd979dd7b5d217e2fb1540e3bacb4fcd7",
-        "version" : "4.26.0"
+        "revision" : "172f3e8a15cdafe7241c565889fe08a151017742",
+        "version" : "5.0.0"
       }
     },
     {

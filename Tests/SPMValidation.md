@@ -1,3 +1,16 @@
+# SDK 5.0 迁移验证（2026-11-26）
+
+- Xcode 26.0.1；iPhone 17 Pro / iOS 26.2 / arm64 模拟器。
+- 本地 ExampleSPM 引用当前仓库，依赖解析为 HyphenateChat 5.0.0。
+- 宿主测试 17 项全部通过：资源与本地化 9 项、AMR 3 项、导航布局 5 项。
+- 产物检查通过：每份资源包 328 张图片、两种本地化、隐私清单与 AMR 动态库嵌入。
+- CocoaPods quick lint、Ruby 语法、工程 plist 和 git diff --check 通过。
+- 未验证真机签名、实际免打扰请求、聊天输入事件投递和 CocoaPods 完整宿主构建。
+- 测试日志：`/private/tmp/easechatuikit-sdk5-cherry-pick-tests.log`。
+- 测试结果：`/private/tmp/easechatuikit-sdk5-cherry-pick-tests.xcresult`。
+
+---
+
 > 以下为原提交在 main / SDK 4.26.0 上的历史验证记录，不代表 sdk-5.0 分支已通过同样的运行验证。SDK 5 已移除两张举报图片，资源基线为 328 张。
 
 # SPM 本地集成验证
